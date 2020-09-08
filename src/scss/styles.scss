@@ -58,7 +58,9 @@ header.header_area {
       font-size: 15px;
       color: rgba(0, 0, 0, 0.6);
       &:hover {
+        color:red;
         font-weight: bold;
+        
       }
     }
   }
