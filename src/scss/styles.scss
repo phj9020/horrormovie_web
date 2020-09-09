@@ -8,10 +8,14 @@ body {
   height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: $white;
 }
 header.header_area {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: $white;
-  width: 33%;
+  width: $fixedWidth;
   height: 100%;
   padding: 10vh 0 72px 72px;
   color: $red;
@@ -21,6 +25,7 @@ header.header_area {
   h1 {
     font-size: 70px;
     width: 50%;
+
   }
   h3,
   p,
@@ -48,7 +53,8 @@ header.header_area {
         margin-right: 10px;
         font-size: 15px;
         color: rgba(0, 0, 0, 0.6);
-        font-weight: 500;
+        font-weight: 600;
+        margin-bottom: 10px;
       }
       &:checked {
         color: rgba(0, 0, 0, 0.6);
@@ -58,10 +64,58 @@ header.header_area {
       font-size: 15px;
       color: rgba(0, 0, 0, 0.6);
       &:hover {
-        color:red;
+        color:black;
         font-weight: bold;
         
       }
     }
   }
 }
+
+
+main {
+  // header의 공간만큼 margin을 줘야 main안의 텍스트가 main영역에 보인다
+  margin-left: $fixedWidth;
+ 
+  .movie{
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 5%,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    )
+    $red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+  }
+  .movie_header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    margin-bottom: 20px;
+  }
+  .movie_header h4{
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .movie_header h5{
+    font-weight: 500;
+  }
+  .player_wrapper{
+    width: 100%;
+    display: flex;
+    box-shadow: 0 80px 80px -80px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
